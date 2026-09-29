@@ -1,0 +1,251 @@
+{
+  "evs": {
+    "ev-critical": {
+      "batteryPercent": 12,
+      "requiredChargePercent": 85,
+      "currentLocation": { "latitude": 13.0827, "longitude": 80.2707 },
+      "destination": { "latitude": 13.0475, "longitude": 80.209 },
+      "vehicle": {
+        "batteryCapacityKwh": 75,
+        "maxChargeRateKw": 150,
+        "make": "Demo Motors",
+        "model": "City EV"
+      },
+      "inputSource": "simulated",
+      "createdAt": "@ago:3600",
+      "updatedAt": "@ago:300"
+    },
+    "ev-commuter": {
+      "batteryPercent": 38,
+      "requiredChargePercent": 80,
+      "currentLocation": { "latitude": 13.0569, "longitude": 80.2425 },
+      "destination": { "latitude": 13.1067, "longitude": 80.2206 },
+      "vehicle": {
+        "batteryCapacityKwh": 68,
+        "maxChargeRateKw": 100,
+        "make": "Demo Motors",
+        "model": "Touring EV"
+      },
+      "inputSource": "simulated",
+      "createdAt": "@ago:2400",
+      "updatedAt": "@ago:180"
+    },
+    "ev-fleet": {
+      "batteryPercent": 64,
+      "requiredChargePercent": 90,
+      "currentLocation": { "latitude": 13.0108, "longitude": 80.2341 },
+      "destination": { "latitude": 13.0827, "longitude": 80.2707 },
+      "vehicle": {
+        "batteryCapacityKwh": 82,
+        "maxChargeRateKw": 180,
+        "make": "Demo Motors",
+        "model": "Fleet XL"
+      },
+      "inputSource": "simulated",
+      "createdAt": "@ago:1800",
+      "updatedAt": "@ago:120"
+    }
+  },
+  "chargers": {
+    "charger-marina": {
+      "stationName": "Marina Fast Charge",
+      "location": { "latitude": 13.0501, "longitude": 80.2824 },
+      "connectors": [
+        {
+          "connectorType": "CCS",
+          "powerKw": 150,
+          "totalCount": 4,
+          "availableCount": 2
+        }
+      ],
+      "queue": { "currentCount": 8, "observedAt": "@ago:90" },
+      "grid": {
+        "currentLoadKw": 390,
+        "capacityKw": 600,
+        "activeSessionCount": 2,
+        "expectedIncomingDemandKw": 90,
+        "predictedPeakLoadKw": 555,
+        "updatedAt": "@ago:60"
+      },
+      "dataSource": "simulated",
+      "updatedAt": "@ago:60"
+    },
+    "charger-central": {
+      "stationName": "Central Rail Hub",
+      "location": { "latitude": 13.0827, "longitude": 80.2707 },
+      "connectors": [
+        {
+          "connectorType": "CCS",
+          "powerKw": 120,
+          "totalCount": 5,
+          "availableCount": 3
+        }
+      ],
+      "queue": { "currentCount": 5, "observedAt": "@ago:75" },
+      "grid": {
+        "currentLoadKw": 250,
+        "capacityKw": 700,
+        "activeSessionCount": 2,
+        "expectedIncomingDemandKw": 75,
+        "predictedPeakLoadKw": 430,
+        "updatedAt": "@ago:60"
+      },
+      "dataSource": "simulated",
+      "updatedAt": "@ago:60"
+    },
+    "charger-airport": {
+      "stationName": "Airport Connector",
+      "location": { "latitude": 12.9941, "longitude": 80.1709 },
+      "connectors": [
+        {
+          "connectorType": "CCS",
+          "powerKw": 180,
+          "totalCount": 3,
+          "availableCount": 1
+        }
+      ],
+      "queue": { "currentCount": 5, "observedAt": "@ago:105" },
+      "grid": {
+        "currentLoadKw": 420,
+        "capacityKw": 500,
+        "activeSessionCount": 2,
+        "expectedIncomingDemandKw": 100,
+        "predictedPeakLoadKw": 545,
+        "updatedAt": "@ago:60"
+      },
+      "dataSource": "simulated",
+      "updatedAt": "@ago:60"
+    }
+  },
+  "charging_sessions": {
+    "marina-done-1": {
+      "evId": "ev-old-1",
+      "chargerId": "charger-marina",
+      "status": "completed",
+      "arrivedAt": "@ago:1800",
+      "chargingStartedAt": "@ago:1740",
+      "chargingEndedAt": "@ago:1200",
+      "energyDeliveredKwh": 38,
+      "dataSource": "simulated",
+      "createdAt": "@ago:1800",
+      "updatedAt": "@ago:1200"
+    },
+    "marina-done-2": {
+      "evId": "ev-old-2",
+      "chargerId": "charger-marina",
+      "status": "completed",
+      "arrivedAt": "@ago:3600",
+      "chargingStartedAt": "@ago:3540",
+      "chargingEndedAt": "@ago:3000",
+      "energyDeliveredKwh": 42,
+      "dataSource": "simulated",
+      "createdAt": "@ago:3600",
+      "updatedAt": "@ago:3000"
+    },
+    "marina-active": {
+      "evId": "ev-commuter",
+      "chargerId": "charger-marina",
+      "status": "charging",
+      "arrivedAt": "@ago:600",
+      "chargingStartedAt": "@ago:480",
+      "dataSource": "simulated",
+      "createdAt": "@ago:600",
+      "updatedAt": "@ago:120"
+    },
+    "central-done-1": {
+      "evId": "ev-old-3",
+      "chargerId": "charger-central",
+      "status": "completed",
+      "arrivedAt": "@ago:2400",
+      "chargingStartedAt": "@ago:2340",
+      "chargingEndedAt": "@ago:1800",
+      "energyDeliveredKwh": 30,
+      "dataSource": "simulated",
+      "createdAt": "@ago:2400",
+      "updatedAt": "@ago:1800"
+    },
+    "central-done-2": {
+      "evId": "ev-old-4",
+      "chargerId": "charger-central",
+      "status": "completed",
+      "arrivedAt": "@ago:4200",
+      "chargingStartedAt": "@ago:4140",
+      "chargingEndedAt": "@ago:3600",
+      "energyDeliveredKwh": 34,
+      "dataSource": "simulated",
+      "createdAt": "@ago:4200",
+      "updatedAt": "@ago:3600"
+    },
+    "central-waiting": {
+      "evId": "ev-fleet",
+      "chargerId": "charger-central",
+      "status": "waiting",
+      "arrivedAt": "@ago:300",
+      "dataSource": "simulated",
+      "createdAt": "@ago:300",
+      "updatedAt": "@ago:300"
+    },
+    "airport-done-1": {
+      "evId": "ev-old-5",
+      "chargerId": "charger-airport",
+      "status": "completed",
+      "arrivedAt": "@ago:3000",
+      "chargingStartedAt": "@ago:2940",
+      "chargingEndedAt": "@ago:2340",
+      "energyDeliveredKwh": 45,
+      "dataSource": "simulated",
+      "createdAt": "@ago:3000",
+      "updatedAt": "@ago:2340"
+    },
+    "airport-done-2": {
+      "evId": "ev-old-6",
+      "chargerId": "charger-airport",
+      "status": "completed",
+      "arrivedAt": "@ago:4800",
+      "chargingStartedAt": "@ago:4740",
+      "chargingEndedAt": "@ago:4200",
+      "energyDeliveredKwh": 40,
+      "dataSource": "simulated",
+      "createdAt": "@ago:4800",
+      "updatedAt": "@ago:4200"
+    }
+  },
+  "reservations": {
+    "demo-reservation-seed": {
+      "evId": "ev-commuter",
+      "chargerId": "charger-central",
+      "slotStart": "@ahead:1800",
+      "slotEnd": "@ahead:3600",
+      "status": "confirmed",
+      "allocationHistory": [],
+      "createdAt": "@ago:900",
+      "updatedAt": "@ago:900"
+    }
+  },
+  "simulation_runs": {
+    "demo-simulation-latest": {
+      "input": { "incomingEvCount": 24, "windowMinutes": 60 },
+      "results": {
+        "baseline": {
+          "averageWaitMinutes": 31.5,
+          "maximumWaitMinutes": 68,
+          "peakGridUtilizationPercent": 109,
+          "overloadedStationCount": 1,
+          "unassignedEvCount": 3,
+          "assignedEvCount": 21
+        },
+        "gridFlow": {
+          "averageWaitMinutes": 19.2,
+          "maximumWaitMinutes": 42,
+          "peakGridUtilizationPercent": 91,
+          "overloadedStationCount": 0,
+          "unassignedEvCount": 1,
+          "assignedEvCount": 23
+        },
+        "stations": []
+      },
+      "dataSource": "simulated",
+      "createdAt": "@ago:120"
+    }
+  }
+}
