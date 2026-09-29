@@ -1,4 +1,5 @@
 from fastapi import FastAPI, Request
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
 from .api.chargers import router as chargers_router
@@ -22,6 +23,12 @@ from .services.queue_prediction_service import InsufficientQueuePredictionDataEr
 from .services.grid_intelligence_service import InvalidGridDataError
 
 app = FastAPI(title="GridFlow AI")
+app.add_middleware(
+	CORSMiddleware,
+	allow_origins=["https://ev-charging-lime.vercel.app"],
+	allow_methods=["GET", "POST", "PATCH"],
+	allow_headers=["*"],
+)
 app.include_router(ev_router)
 app.include_router(chargers_router)
 app.include_router(queue_router)
